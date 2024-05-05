@@ -13,17 +13,17 @@
 
 ### The Phases of Data Analysis
 
-#### 1. Ask
+#### 1. Ask :thought_balloon:
 
-#### 2. Prepare
+#### 2. Prepare :package:
 
-#### 3. Process
+#### 3. Process :soap:
 
-#### 4. Analyze
+#### 4. Analyze :test_tube:
 
-#### 5. Share
+#### 5. Share :bar_chart:
 
-#### 6. Act
+#### 6. Act :clapper:
 
 ### Scenario
 
@@ -40,3 +40,54 @@ Enviromental Protection Agency (EPA): Organization Responsible for monitoring an
 Secondary Stakeholders: 
 
 Consumers: Interested in understanding the enviormental impact of their vehicle choices and the fuel efficiency performance of different vehicle types and manufacturers. 
+
+## 2. Prepare
+
+[Data Source](https://catalog.data.gov/dataset/the-epa-automotive-trends-report-greenhouse-gas-emissions-fuel-economy-and-technology-sinc) and [License](https://edg.epa.gov/EPA_Data_License.html)
+
+The EPA Automotive Trends Report Dataset contains 5,392 rows and 54 columns spanning a 47-year period (1975 to 2022).
+
+:pencil: Data Passes ROCCC Approach:
+
+- Reliability: Annual Report from the U.S. Environmental Protection Agency
+
+- Original:  Includes complete and accurate data about new light-duty vehicle greenhouse gas. 
+
+- Comprehensive: Dataset contains Manufacturer, Model Year, Vehicle Type, CO2, MPG, Footprint, Production, and Powertrain (Gasoline and EV).
+
+- Current: Updated annually to include the most up to date data available for all model years.
+
+- Cited: Intended for public access and use in accordance with the existing license agreement.
+
+:construction: Dataset Limitations:
+
+- All model years from 2023 are preliminary. Meaning models are subject to revisions/adjustments as more accurate and verified info becomes available throughout the year. May not represent the final figures. 
+
+- Dataset is based on production values for vehicles sold in the United States, specific to each model year. It should be noted that this dataset does not encompass global vehicle production. 
+
+- Data is based on lab tests that may not accurately reflect real-world driving conditions and are subject to limitations in accuracy. 
+
+- It is important to note that EV do not release CO2 the same way combustions engines do. This is not to say that EV vehicles do not contribute to any CO2 emissions. The production of EV batteries and charging stations contribute to GHG emissions. In this case, we would need more data for a complete analysis. 
+
+- Note that other factors like advancements in fuel efficiency, changes in driving patterns and shifts in consumer preferences can all play a role in reduction in CO2 emissions from gasoline vehicles overtime.
+
+- The dataset exclusively comprises full electric vehicles (EVs) meeting our analysis criteria, with Tesla being the sole manufacturer included.
+
+## 3. Process
+
+
+
+
+
+## 4. Analyze
+
+
+
+
+
+## 5. Share
+
+
+
+
+## 6. Act
