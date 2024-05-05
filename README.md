@@ -75,6 +75,33 @@ The EPA Automotive Trends Report Dataset contains 5,392 rows and 54 columns span
 
 ## 3. Process
 
+:hammer_and_wrench: Tool: Google Sheets/Excel
+
+Examine [EPA Original Dataset](https://docs.google.com/spreadsheets/d/1rBMlYg6ZQNN2H0o_i8nSKf-ulyKhAjj6asA3752hdHk/edit?usp=sharing)
+
+Clean Dataset for Analysis:
+
+- Removed 45 columns that are not necessary for our analysis.
+
+- Rename Columns for clarity
+
+- Removed any Preliminary 2023 years from Model Year column using find and replace since they may not represent final figures.
+
+- Special characters represented by "-" have been replaced with null values in the dataset, accurately reflecting their absence or lack of data. 
+
+- Remove Null Values for MPG since this will be necessary for our analysis and it will also filter out any other null values for C02, Production and Production Share. 
+
+- Round CO2, MPG and Footprint columns to the nearest hundredth. 
+
+- Delete any rows that have a Production and Production Share of 0. 
+
+- Identify and remove any duplicates. 
+
+- Prepare the dataset for extraction as a .CSV file and further cleaning and organization in SQL.
+
+- Cleaned Dataset now contains 9 Columns and 4062 Rows. 
+
+[EPA Cleaned Dataset](https://docs.google.com/spreadsheets/d/1jSmtlchz_qp5gazKbNC2RV0mAZywj1FEzzAAMoDOwew/edit?usp=sharing)
 
 
 
