@@ -31,6 +31,8 @@ The EPA is interested in the possible benefits or disadvantages in Electric vs. 
 
 ## 1. Ask
 
+It's impossible to solve a problem if you don’t know what it is. Ask Questions!
+
 :flashlight: **Business Task: Analyze EPA Dataset to discover insights about Electric vs. Traditional Vehicles GHG Emissions and Fuel Efficiency**
 
 Primary Stakeholders: 
@@ -43,6 +45,8 @@ Consumers: Interested in understanding the enviormental impact of their vehicle 
 
 ## 2. Prepare
 
+Decide what data you need to collect in order to answer your questions. 
+
 [Data Source](https://catalog.data.gov/dataset/the-epa-automotive-trends-report-greenhouse-gas-emissions-fuel-economy-and-technology-sinc) and [License](https://edg.epa.gov/EPA_Data_License.html)
 
 The EPA Automotive Trends Report Dataset contains 5,392 rows and 54 columns spanning a 47-year period (1975 to 2022).
@@ -53,7 +57,7 @@ The EPA Automotive Trends Report Dataset contains 5,392 rows and 54 columns span
 
 - Original:  Includes complete and accurate data about new light-duty vehicle greenhouse gas. 
 
-- Comprehensive: Dataset contains Manufacturer, Model Year, Vehicle Type, CO2, MPG, Footprint, Production, and Powertrain (Gasoline and EV).
+- Comprehensive: Dataset contains Manufacturer, Model Year, Regulatory Class, Vehicle Type, CO2, MPG, Footprint, Production, Production Share.
 
 - Current: Updated annually to include the most up to date data available for all model years.
 
@@ -75,9 +79,11 @@ The EPA Automotive Trends Report Dataset contains 5,392 rows and 54 columns span
 
 ## 3. Process
 
+Clean data is the best data. You will need to clean up data to get rid of any errors, inaccuracies, or inconsistencies.
+
 :hammer_and_wrench: Tool: Google Sheets/Excel
 
-Examine [EPA Original Dataset](https://docs.google.com/spreadsheets/d/1rBMlYg6ZQNN2H0o_i8nSKf-ulyKhAjj6asA3752hdHk/edit?usp=sharing)
+:microscope: Examine [EPA Original Dataset](https://docs.google.com/spreadsheets/d/1rBMlYg6ZQNN2H0o_i8nSKf-ulyKhAjj6asA3752hdHk/edit?usp=sharing)
 
 Clean Dataset for Analysis:
 
@@ -97,11 +103,11 @@ Clean Dataset for Analysis:
 
 - Identify and remove any duplicates. 
 
-- Prepare the dataset for extraction as a .CSV file and further cleaning and organization in SQL.
-
 - Cleaned Dataset now contains 9 Columns and 4062 Rows. 
 
-[EPA Cleaned Dataset](https://docs.google.com/spreadsheets/d/1jSmtlchz_qp5gazKbNC2RV0mAZywj1FEzzAAMoDOwew/edit?usp=sharing)
+- Prepare the dataset for extraction as a .CSV file and further cleaning and organization in SQL.
+
+:soap: [EPA Cleaned Dataset](https://docs.google.com/spreadsheets/d/1jSmtlchz_qp5gazKbNC2RV0mAZywj1FEzzAAMoDOwew/edit?usp=sharing)
 
 
 
