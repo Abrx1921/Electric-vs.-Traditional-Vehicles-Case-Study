@@ -54,27 +54,18 @@ The EPA Automotive Trends Report Dataset contains 5,392 rows and 54 columns span
 :pencil: Data Passes ROCCC Approach:
 
 - Reliability: Annual Report from the U.S. Environmental Protection Agency
-
 - Original:  Includes complete and accurate data about new light-duty vehicle greenhouse gas. 
-
 - Comprehensive: Dataset contains Manufacturer, Model Year, Regulatory Class, Vehicle Type, CO2, MPG, Footprint, Production, Production Share.
-
 - Current: Updated annually to include the most up to date data available for all model years.
-
 - Cited: Intended for public access and use in accordance with the existing license agreement.
 
 :construction: Dataset Limitations:
 
 - All model years from 2023 are preliminary. Meaning models are subject to revisions/adjustments as more accurate and verified info becomes available throughout the year. May not represent the final figures. 
-
 - Dataset is based on production values for vehicles sold in the United States, specific to each model year. It should be noted that this dataset does not encompass global vehicle production. 
-
 - Data is based on lab tests that may not accurately reflect real-world driving conditions and are subject to limitations in accuracy. 
-
 - It is important to note that EV do not release CO2 the same way combustions engines do. This is not to say that EV vehicles do not contribute to any CO2 emissions. The production of EV batteries and charging stations contribute to GHG emissions. In this case, we would need more data for a complete analysis. 
-
 - Note that other factors like advancements in fuel efficiency, changes in driving patterns and shifts in consumer preferences can all play a role in reduction in CO2 emissions from gasoline vehicles overtime.
-
 - The dataset exclusively comprises full electric vehicles (EVs) meeting our analysis criteria, with Tesla being the sole manufacturer included.
 
 ## 3. Process
@@ -88,29 +79,37 @@ Clean data is the best data. You will need to clean up data to get rid of any er
 Clean Dataset for Analysis:
 
 - Removed 45 columns that are not necessary for our analysis.
-
 - Rename Columns for clarity
-
 - Removed any Preliminary 2023 years from Model Year column using find and replace since they may not represent final figures.
-
 - Special characters represented by "-" have been replaced with null values in the dataset, accurately reflecting their absence or lack of data. 
-
 - Remove Null Values for MPG since this will be necessary for our analysis and it will also filter out any other null values for C02, Production and Production Share. 
-
 - Round CO2, MPG and Footprint columns to the nearest hundredth. 
-
 - Delete any rows that have a Production and Production Share of 0. 
-
 - Identify and remove any duplicates. 
-
 - Cleaned Dataset now contains 9 Columns and 4062 Rows. 
-
 - Prepare the dataset for extraction as a .CSV file and further cleaning and organization in SQL.
 
-:soap: [EPA Cleaned Dataset](https://docs.google.com/spreadsheets/d/1jSmtlchz_qp5gazKbNC2RV0mAZywj1FEzzAAMoDOwew/edit?usp=sharing)
+:soap: [EPA Cleaned Dataset Spreadsheets](https://docs.google.com/spreadsheets/d/1jSmtlchz_qp5gazKbNC2RV0mAZywj1FEzzAAMoDOwew/edit?usp=sharing)
 
+:hammer_and_wrench: Tool: SQL/BigQuery 
 
+- Upload cleaned dataset to SQL and ensure the schema datatypes are correct.
+- Preview the dataset
+- Remove/Identify duplicates 
+- Identify the different attributes under regulatory class and vehicle types.
+- Identify the number of different manufacturers in dataset.
+- Identify the number of manufacturers per vehicle type in the dataset
 
+Create multiple tables for streamline a analysis
+
+- Table 1: Create a table filtering for 'All' occurrences in the dataset. 1852 Rows
+- Table 2: Create a table for Manufacturers that Omits occurrences in ‘All’. 2209 Rows
+- Table 3: Create a table where there is a consistent amount of vehicles per vehicle type (Omit Tesla as it could skew mpg results due to its high mpg)
+- Table 4: Create a table where there is a consistent amount of vehicles per vehicle type (Tesla Included)
+
+:soap: [EPA Cleaned Dataset Queries](https://console.cloud.google.com/bigquery?sq=1014993859659:78a48edfd2e5460a8af6d2d12f389c08)
+
+Upload new tables to SQL to begin analysis and answer stakeholder questions
 
 ## 4. Analyze
 
