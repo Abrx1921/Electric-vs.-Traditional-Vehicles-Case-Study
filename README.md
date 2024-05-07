@@ -113,7 +113,30 @@ Upload new tables to SQL to begin analysis and answer stakeholder questions
 
 ## 4. Analyze
 
+You will want to think analytically about your data. At this stage you might sort and
+format your data to make it easier to perform calculations, combine data from multiple sources and create tables with your results!
 
+Stakeholder Questions :thought_balloon: and Insights Found :test_tube:
+
+- What is the trend in average GHG emissions per vehicle type for EVs and traditional vehicles since the introduction of EVs?
+
+  We see a downward trend based on Vehicle Types across the board (Total CO2 and Average CO2). Even though our number of vehicles in our dataset vary, the trend still continues. For example, Since the introduction of EVs for Sedans/Wagons, we see a 8.2% decrease in average CO2 emissions from 2012 to 2022. When we look at the Total CO2 Emissions for Sedans/Wagons we see 4283.4 g/mi in 2012 compared to 3931.8 g/mi in 2022. The same trend continues for all the vehicle types in our dataset. 
+
+  New: We see a downward trend for both the sum and average of CO2 emissions across all Vehicle Types since the introduction of EVs in 2012. . Even though our number of vehicles in our dataset vary, the trend still continues. For example, Since the introduction of EVs for Sedans/Wagons, we see a 8.2% decrease in average CO2 emissions from 2012 to 2022. When we look at the Total CO2 Emissions for Sedans/Wagons we see 4283.4 g/mi in 2012 compared to 3931.8 g/mi in 2022. The same trend continues for all the vehicle types in our dataset. 
+ 
+How does the adoption of EVs correlate with changes in overall greenhouse gas emissions from the automotive sector?
+
+ It is important to note that EV (Electric Vehicles) do not release CO2 the same way combustions engines do. This is not to say that EV vehicles do not contribute to any CO2 emissions. The production of EV batteries and charging stations do contribute to GHG emissions. In this case, we would need more data for a complete analysis. It is also important to point out that other factors like advancements in fuel efficiency, changes in driving patterns and shifts in consumer preferences can all play a role in changes in CO2 emissions from gasoline vehicles. 
+ 
+Are there any significant differences in emission trends among different vehicle types when comparing EVs to traditional vehicles?
+
+ Original: Like specified earlier, we will need more data to understand the emissions of EVs compared to combustion engines due to EVs not contributing to GHG (Green House Gasses) the same way traditional vehicles do. 
+
+ While it's evident that there's a downward trend in emissions across various vehicle types, it's important to note that the comparison between EVs and traditional vehicles requires additional data. This is because EVs do not produce greenhouse gas emissions in the same manner as traditional combustion engines. Therefore, a comprehensive understanding of emission trends among different vehicle types necessitates a more thorough analysis, taking into account the unique emission profiles of EVs and traditional vehicles.
+
+ With the data we have and to ensure consistency, we used a sample size of 90 vehicles per vehicle type. From our random samples, we see that Pickups contribute to the most CO2 emissions at 43,852.17 g/mi. Sedan/Wagons contribute the least at a total of 29,508.15 g/mi. 
+
+ New: With the data we have and to ensure consistency, we used a sample size of 305 vehicles per vehicle type. From our random samples, we see that Pickups contribute to the most CO2 emissions at 150,333.18 g/mi. while Sedan/Wagons contribute the least at a total of 110,144.19 g/mi. 
 
 
 
