@@ -116,7 +116,9 @@ Upload new tables to SQL to begin analysis and answer stakeholder questions
 You will want to think analytically about your data. At this stage you might sort and
 format your data to make it easier to perform calculations, combine data from multiple sources and create tables with your results!
 
-Stakeholder Questions :thought_balloon: and Insights Found :test_tube:
+🛠️ Tool: SQL/BigQuery
+
+Stakeholder Questions :thought_balloon: and Insights Found :test_tube::
 
 - How have greenhouse gas emissions changed since the introduction of EV?
 
@@ -150,7 +152,9 @@ Stakeholder Questions :thought_balloon: and Insights Found :test_tube:
 
   One significant factor contributing to variations in fuel efficiency is the vehicle's footprint (measured in square feet). The footprint describes the physical dimensions of a vehicle and can provide insights. For instance, pickups typically have poorer fuel efficiency compared to sedans and wagons due in part to their larger average footprint. According to our dataset, pickups have an average footprint of 62.43 square feet, whereas sedans and wagons have an average footprint of 46.34 square feet.
 
-  Another factor influencing fuel efficiency is advancements in technology. Over time, improvements in fuel efficiency technology have led to better miles per gallon. We see an average of 20.19 MPG across all vehicles since 1975 to 2000. Meanwhile from 2001 to 2022 we have an average of 24.53 MPG. Clearly  proving that fuel efficiency has increased due to advancements in tech. 
+  Another factor influencing fuel efficiency is advancements in technology. Over time, improvements in fuel efficiency technology have led to better miles per gallon. We see an average of 20.19 MPG across all vehicles since 1975 to 2000. Meanwhile from 2001 to 2022 we have an average of 24.53 MPG. Clearly  proving that fuel efficiency has increased due to advancements in tech.
+
+:clipboard: [SQL Analysis Queries](https://console.cloud.google.com/bigquery?sq=1014993859659:fafeb3ae28c348089362e444d2faf415)
 
 
 ## 5. Share
