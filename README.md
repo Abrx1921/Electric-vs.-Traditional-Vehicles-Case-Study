@@ -23,7 +23,7 @@
 
 ### Scenario
 
-The EPA is interested in the possible benefits or disadvantages in Electric vs. Traditional Combustion Vehicles. They want to know about CO2 emissions and Fuel Efficiency between different manufacturers in order to implement stricter regulations and incentivise the production of eviormentaly friendly vehicles. Consumers are also interested in which vehicles are in their best interest (fuel efficient) when inquiring about different vehicle types and manufacturers. Your team wants to find insights for your stakeholders inorder to aid in the reduction of green house gas emissions and increased fuel efficiency. 
+The EPA is interested in the possible benefits or disadvantages in Electric vs. Traditional Combustion Vehicles. They want to know about CO2 emissions and Fuel Efficiency between different manufacturers in order to implement stricter regulations and incentivise the production of environmentally friendly vehicles. Consumers are also interested in which vehicles are in their best interest (fuel efficient) when inquiring about different vehicle types and manufacturers. Your team wants to find insights for your stakeholders in order to aid in the reduction of greenhouse gas emissions and increased fuel efficiency. 
 
 ## 1. Ask
 
@@ -33,11 +33,11 @@ It's impossible to solve a problem if you don’t know what it is. Ask Questions
 
 Primary Stakeholders: 
 
-Enviromental Protection Agency (EPA): Organization Responsible for monitoring and regulating vehicle emissions, the EPA has a vested interest in understanding the enviormental impact of electric and traditional vehicles on GHG emissions.
+Environmental Protection Agency (EPA): Organization Responsible for monitoring and regulating vehicle emissions, the EPA has a vested interest in understanding the environmental impact of electric and traditional vehicles on GHG emissions.
 
 Secondary Stakeholders: 
 
-Consumers: Interested in understanding the enviormental impact of their vehicle choices and the fuel efficiency performance of different vehicle types and manufacturers. 
+Consumers: Interested in understanding the environmental impact of their vehicle choices and the fuel efficiency performance of different vehicle types and manufacturers. 
 
 ## 2. Prepare
 
@@ -60,7 +60,7 @@ The EPA Automotive Trends Report Dataset contains 5,392 rows and 54 columns span
 - All model years from 2023 are preliminary. Meaning models are subject to revisions/adjustments as more accurate and verified info becomes available throughout the year. May not represent the final figures. 
 - Dataset is based on production values for vehicles sold in the United States, specific to each model year. It should be noted that this dataset does not encompass global vehicle production. 
 - Data is based on lab tests that may not accurately reflect real-world driving conditions and are subject to limitations in accuracy. 
-- It is important to note that EV do not release CO2 the same way combustions engines do. This is not to say that EV vehicles do not contribute to any CO2 emissions. The production of EV batteries and charging stations contribute to GHG emissions. In this case, we would need more data for a complete analysis. 
+- It is important to note that EV do not release CO2 the same way combustion engines do. This is not to say that EV vehicles do not contribute to any CO2 emissions. The production of EV batteries and charging stations contribute to GHG emissions. In this case, we would need more data for a complete analysis. 
 - Note that other factors like advancements in fuel efficiency, changes in driving patterns and shifts in consumer preferences can all play a role in reduction in CO2 emissions from gasoline vehicles overtime.
 - The dataset exclusively comprises full electric vehicles (EVs) meeting our analysis criteria, with Tesla being the sole manufacturer included.
 
@@ -76,7 +76,7 @@ Clean Dataset for Analysis:
 
 - Removed 45 columns that are not necessary for our analysis.
 - Rename Columns for clarity
-- Removed any Preliminary 2023 years from Model Year column using find and replace since they may not represent final figures.
+- Removed any Preliminary 2023 years from the Model Year column using find and replace since they may not represent final figures.
 - Special characters represented by "-" have been replaced with null values in the dataset, accurately reflecting their absence or lack of data. 
 - Remove Null Values for MPG since this will be necessary for our analysis and it will also filter out any other null values for C02, Production and Production Share. 
 - Round CO2, MPG and Footprint columns to the nearest hundredth. 
@@ -143,5 +143,5 @@ Actionable Insights:
 Future Case Study Recommendations:
 
 - Obtain more data for an accurate analysis about the other ways EVs produce CO2.
-- Collect information about other types of EVs from different manufacturers as electirc adoption grows.
+- Collect information about other types of EVs from different manufacturers as electric adoption grows.
 - Look at the price comparison between Electric Vehicles (EVs) and Traditional Vehicles to influence consumer/public opinion.
