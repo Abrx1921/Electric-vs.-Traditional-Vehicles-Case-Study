@@ -118,41 +118,8 @@ format your data to make it easier to perform calculations, combine data from mu
 
 🛠️ Tool: SQL/BigQuery
 
-Stakeholder Questions :thought_balloon: and Insights Found :test_tube::
+:thought_balloon:Stakeholder [Questions & Insights](https://docs.google.com/document/d/1z5CaZsdc3m0OF7ZITtQj7U5aHOXBLCo3BekDtYmRfoI/edit?usp=sharing) :test_tube:
 
-- How have greenhouse gas emissions changed since the introduction of EV?
-
-  We see a downward trend for both the sum and average of CO2 emissions across all Vehicle Types since the introduction of EVs in 2012. Even though our number of vehicles in our dataset vary, the trend still continues across the board. 
-  
-- What is the trend in average GHG emissions per vehicle type for EVs and traditional vehicles since the introduction of EVs?
-
-  Since the introduction of EVs for Sedans/Wagons, we see a 8.21% decrease in average CO2 emissions from 2012 to 2022. When we look at the Total CO2 Emissions for Sedans/Wagons we see 4283.41 g/mi in 2012 compared to 3931.79 g/mi in 2022. The same trend continues for all the vehicle types in our dataset. 
- 
-- How does the adoption of EVs correlate with changes in overall greenhouse gas emissions from the automotive sector?
-
-  It is important to note that EV (Electric Vehicles) do not release CO2 the same way combustions engines do. This is not to say that EV vehicles do not contribute to any CO2 emissions. The production of EV batteries and charging stations do contribute to GHG emissions. In this case, we would need more data for a complete analysis. It is also important to point out that other factors like advancements in fuel efficiency, changes in driving patterns and shifts in consumer preferences can all play a role in changes in CO2 emissions from gasoline vehicles. 
- 
-- Are there any significant differences in emission trends among different vehicle types when comparing EVs to traditional vehicles?
-
-  While it's evident that there's a downward trend in emissions across various vehicle types, it's important to note that the comparison between EVs and traditional vehicles requires additional data. This is because EVs do not produce greenhouse gas emissions in the same manner as traditional combustion engines. Therefore, a comprehensive understanding of emission trends among different vehicle types necessitates a more thorough analysis, taking into account the unique emission profiles of EVs and traditional vehicles.
-
-  With the data we have and to ensure consistency, we used a sample size of 305 vehicles per vehicle type. From our random samples, we see that Pickups have contributed the most CO2 emissions at a total of 150,333.18 g/mi. while Sedan/Wagons contribute the least at a total of 110,144.19 g/mi. 
-
-- Are electric vehicles (EVs) more fuel-efficient compared to traditional internal combustion engine vehicles across different vehicle types (SUVs, Trucks, Sedans, etc.) and manufacturers?
-
-  Note that EVs rely solely on battery power in order to get from point A to point B. Although they don’t rely on ‘gallons’, the term (MPG or MPGe) is used as a unit of measurement in the US, Canada and the UK while other countries use Kilometers per liter (km/L). Perhaps in the future when EVs become the norm, we will develop a new term to better represent their range efficiency.
-
-  From our analysis, we can see that EVs are definitely more efficient. In our dataset the lowest EVs MPG range was 89.14 MPG, and has only gone up from there over the years to a Max of 129.83 MPG. If we compare this to the Max MPG of traditional vehicles we get 38.49 MPG, while the minimum goes down to 8.99 MPG. When we look across different vehicle type, we can see that Pickups are the least fuel efficient at an average of 18.59 MPG, while Sedans/Wagons hold the highest average at 24.65 MPG. 
-
-- How does fuel economy of EVs compare to that of traditional vehicles within each vehicle type and across different manufacturers? Which vehicle types and manufacturers produce the most fuel-efficient vehicles, and are there any notable differences in fuel efficiency trends between EVs and traditional vehicles?
-
-  Like stated earlier and with our data, we see EVs have the best fuel economy compared to traditional vehicles regardless of its vehicle type. Smaller vehicles reign supreme with the best fuel efficeincy for EVs. While Sedans/Wagons have the best avg fuel economy for traditional vehicles, Pickups have the worst. Across different manufacturers the best traditional vehicle average is held by Hyundai at 24.65 MPG. The worst is held by the multi-brand manufacturer Stellantis at 28.57 MPG. 
-
-- What factors contribute to variations in fuel efficiency among different vehicle types and manufacturers?
-
-  One significant factor contributing to variations in fuel efficiency is the vehicle's footprint (measured in square feet). The footprint describes the physical dimensions of a vehicle and can provide insights. For instance, pickups typically have poorer fuel efficiency compared to sedans and wagons due in part to their larger average footprint. According to our dataset, pickups have an average footprint of 62.43 square feet, whereas sedans and wagons have an average footprint of 46.34 square feet.
-
-  Another factor influencing fuel efficiency is advancements in technology. Over time, improvements in fuel efficiency technology have led to better miles per gallon. We see an average of 20.19 MPG across all vehicles since 1975 to 2000. Meanwhile from 2001 to 2022 we have an average of 24.53 MPG. Clearly  proving that fuel efficiency has increased due to advancements in tech.
 
 :clipboard: [SQL Analysis Queries](https://console.cloud.google.com/bigquery?sq=1014993859659:fafeb3ae28c348089362e444d2faf415)
 
