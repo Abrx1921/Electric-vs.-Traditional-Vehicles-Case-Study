@@ -122,12 +122,26 @@ format your data to make it easier to perform calculations, combine data from mu
 
 ## 5. Share
 
-## [GHG Emissions and Fuel Efficiency Dashboard](https://shorturl.at/FGO59)
+🛠️ Tool: Tableau
 
+#### :framed_picture: [GHG Emissions and Fuel Efficiency Dashboard](https://shorturl.at/FGO59)
 
+<img src="https://github.com/Abrx1921/Electric-vs.-Traditional-Vehicles-Case-Study/assets/167746532/ec094c0c-07df-4716-b440-6828e45746cf" width="400" height="400">
 
+#### :chart_with_downwards_trend: [GHG Emissions and Fuel Efficiency Presentation](https://shorturl.at/vwTV3)
 
-## [GHG Emissions and Fuel Efficiency Presentation](https://shorturl.at/vwTV3)
-
+<img src="https://github.com/Abrx1921/Electric-vs.-Traditional-Vehicles-Case-Study/assets/167746532/3270fa3a-4e80-4af4-9b0f-c38579f9b530" width="400" height="400">
 
 ## 6. Act
+
+Actionable Insights:
+
+- Collaborate with underperforming manufacturers to develop and implement strategies aimed at enhancing fuel efficiency and reducing carbon emissions.
+- Promote consumer awareness/knowledge of electric vs. traditional vehicles to illustrate their impact on CO2 emissions and differences in fuel efficiency.
+- Promote top manufacturers with the lowest GHG emissions and highest MPG to consumers as an incentive to produce more fuel-efficient and environmentally friendly vehicles.
+
+Future Case Study Recommendations:
+
+- Obtain more data for an accurate analysis about the other ways EVs produce CO2.
+- Collect information about other types of EVs from different manufacturers as electirc adoption grows.
+- Look at the price comparison between Electric Vehicles (EVs) and Traditional Vehicles to influence consumer/public opinion.
