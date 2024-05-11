@@ -5,10 +5,6 @@
 
 **Date: May 4, 2024**
 
-[Tableau Dashboard](https://public.tableau.com/app/profile/abraham.saenz.sigala/viz/GHGEmissionsandFuelEfficiencyDashboard/DashboardGHGandFuelEfficiency)
-
-[Tableau Stakeholder Presentation](https://public.tableau.com/app/profile/abraham.saenz.sigala/viz/GHGandFuelEfficiencyPresentation/PresentationGHGandFuelEfficiencyPresentation)
-
 ##
 
 ### The Phases of Data Analysis
@@ -126,7 +122,12 @@ format your data to make it easier to perform calculations, combine data from mu
 
 ## 5. Share
 
+## [GHG Emissions and Fuel Efficiency Dashboard](https://shorturl.at/FGO59)
 
+
+
+
+## [GHG Emissions and Fuel Efficiency Presentation](https://shorturl.at/vwTV3)
 
 
 ## 6. Act
