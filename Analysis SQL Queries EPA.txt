@@ -1,0 +1,281 @@
+EPA Electric vs Traditional Vehicle SQL Queries
+
+-- Identify when EVs were introduced in our dataset
+
+SELECT
+  Manufacturer,
+  Model_Year
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Manufacturers
+WHERE
+  Manufacturer = 'Tesla'
+GROUP BY
+  Manufacturer,
+  Model_Year
+ORDER BY
+  Model_Year
+
+-- OR
+
+SELECT
+  Manufacturer,
+  MIN(Model_Year) AS EV_Introduction
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Manufacturers
+WHERE
+  Manufacturer = 'Tesla'
+GROUP BY
+  Manufacturer
+
+----------------------------------------------------
+
+-- 1. Impact of electric vehicles on GHG emissions:
+
+
+
+-- How have greenhouse gas emissions changed since the introduction of EV?
+
+WITH CO2_Total AS (
+
+-- Run this query to see the Sum or Average CO2 by year and vehicle type
+
+SELECT
+  Model_Year, Vehicle_Type, AVG(CO2_g_mi_Avg_City_HW) AS Avg_CO2
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Manufacturers
+WHERE
+  Model_Year >= 2012
+  AND Vehicle_Type NOT LIKE '%All%'
+  AND Manufacturer NOT LIKE '%All%'
+GROUP BY
+  Model_Year, Vehicle_Type
+ORDER BY
+  Vehicle_Type, Model_Year
+
+)
+
+SELECT
+  Model_Year, SUM(Avg_CO2) AS Total_CO2 -- Change to AVG(Avg_CO2) to see the average CO2 per year across all model years.
+FROM
+  CO2_Total
+WHERE
+  Vehicle_Type = 'Sedan/Wagon'
+GROUP BY
+  Model_Year
+
+ORDER BY
+  Model_Year
+
+
+
+-- What is the trend in average GHG emissions per vehicle type for EVs and traditional vehicles since the introduction of EVs?
+
+SELECT
+  Vehicle_Type,
+  Model_Year,
+  ROUND(SUM(CO2_g_mi_Avg_City_HW), 2) AS CO2_Trend
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Manufacturers
+WHERE
+  Model_Year >= 2012
+  AND Manufacturer <> 'All'
+GROUP BY
+  Vehicle_Type, Model_Year
+ORDER BY
+  Vehicle_Type
+
+
+
+-- How does the adoption of EVs correlate with changes in overall greenhouse gas emissions from the automotive sector?
+
+SELECT
+  Manufacturer, SUM(CO2_g_mi_Avg_City_HW) AS Tesla_CO2
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Manufacturers
+WHERE
+  Manufacturer = 'Tesla'
+GROUP BY
+  Manufacturer
+
+
+
+-- Are there any significant differences in emission trends among different vehicle types when comparing EVs to traditional vehicles?
+
+WITH CO2_Total AS (
+SELECT
+  Model_Year, Vehicle_Type, SUM(CO2_g_mi_Avg_City_HW) AS Sum_of_CO2
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Manu_NoTesla
+   -- Random Sample = to 305. No tesla, as it will skew our results since they produce CO2 differently and nulls/0 could be included.
+GROUP BY
+  Model_Year, Vehicle_Type
+ORDER BY
+  Vehicle_Type, Model_Year
+)
+
+SELECT
+  Vehicle_Type, ROUND(SUM(Sum_of_CO2), 2) AS Total_CO2
+FROM
+  CO2_Total
+GROUP BY
+  Vehicle_Type
+ORDER BY
+  Total_CO2
+
+----------------------------------------------------------------------------------
+
+-- 2. Comparing fuel efficiency between EVs and Traditional Vehicles:
+
+
+
+-- Are electric vehicles (EVs) more fuel-efficient compared to traditional internal combustion engine vehicles across different vehicle types (SUVs, Trucks, Sedans, etc.) and manufacturers?
+
+-- Tesla Min and Max
+
+SELECT
+  Manufacturer, MIN(MPG_Avg_City_HW) AS Min_MPG, MAX(MPG_Avg_City_HW) AS Max_MPG
+
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Manufacturers
+
+WHERE
+  Manufacturer = 'Tesla'
+
+GROUP BY
+  Manufacturer
+
+-- Traditional Vehicles Overall Min and Max
+
+SELECT
+  MIN(Min_MPG) AS Overall_Min_MPG,
+  MAX(Max_MPG) AS Overall_Max_MPG
+FROM (
+SELECT
+  Manufacturer, MIN(MPG_Avg_City_HW) AS Min_MPG, MAX(MPG_Avg_City_HW) AS Max_MPG
+
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Manufacturers
+
+WHERE
+  Manufacturer <> 'Tesla'
+  AND Manufacturer NOT LIKE '%All%'
+
+GROUP BY
+  Manufacturer
+)
+
+-- Avg across vehicle types
+
+SELECT
+  Vehicle_Type, AVG(MPG_Avg_City_HW) AS AVG_MPG
+
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+ 
+WHERE
+ 
+  Manufacturer <> 'Tesla'
+  AND (Vehicle_Type NOT LIKE '%All%')
+  AND (Manufacturer NOT LIKE '%All%')
+GROUP BY
+  Vehicle_Type
+
+ORDER BY
+  AVG_MPG
+
+
+
+-- How does fuel economy of EVs compare to that of traditional vehicles within each vehicle type and across different manufacturers?
+
+-- Which vehicle types and manufacturers produce the most fuel-efficient vehicles, and are there any notable differences in fuel efficiency trends between EVs and traditional vehicles?
+
+SELECT
+  Manufacturer, AVG(MPG_Avg_City_HW) AS Average_MPG_Manufacturer
+
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+
+WHERE
+  Manufacturer <> 'Tesla'
+  AND (Vehicle_Type NOT LIKE '%All%')
+  AND (Manufacturer NOT LIKE '%All%')
+
+GROUP BY
+  Manufacturer
+
+ORDER BY
+  Average_MPG_Manufacturer
+
+-- Vehicle type best mpg
+
+SELECT
+ Vehicle_Type, AVG(MPG_Avg_City_HW) AS Average_MPG_Manufacturer
+
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Manu_NoTesla
+
+WHERE
+ 
+  (Vehicle_Type NOT LIKE '%All%')
+  AND (Manufacturer NOT LIKE '%All%')
+ 
+GROUP BY
+  Vehicle_Type
+
+ORDER BY
+  Average_MPG_Manufacturer
+
+-- Best EVs AVG MPG
+
+SELECT
+  Manufacturer, AVG(MPG_Avg_City_HW), Vehicle_Type
+
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+
+WHERE
+  Manufacturer = 'Tesla'
+  AND (Vehicle_Type NOT LIKE '%All%')
+  AND (Manufacturer NOT LIKE '%All%')
+GROUP BY
+  Manufacturer, Vehicle_Type
+ORDER BY
+  Vehicle_Type
+
+
+
+-- What factors contribute to variations in fuel efficiency among different vehicle types and manufacturers?
+
+-- Footprint Factor
+
+SELECT
+  Vehicle_Type, AVG(Footprint_sq_ft) as AVG_Footprint
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+WHERE
+  Manufacturer NOT LIKE '%All%'
+  AND Vehicle_Type Not Like '%All%'
+GROUP BY
+  Vehicle_Type
+ORDER BY
+  AVG_Footprint
+
+-- Vehicle Age factor
+
+SELECT
+  AVG(AVG_25_Years) AS AVG_MPG_Timeline
+FROM
+(
+SELECT
+  Model_Year, AVG(MPG_Avg_City_HW) AS AVG_25_Years
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+WHERE
+  Model_Year between 2001 and 2022
+GROUP BY
+  Model_Year
+)
+
+
+
+

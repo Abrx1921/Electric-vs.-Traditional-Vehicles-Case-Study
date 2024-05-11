@@ -1,0 +1,179 @@
+EPA Electric vs Traditional Vehicle Cleaning SQL Queries
+-- Preview the data
+
+SELECT
+  *
+
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+
+-- Remove and Identify Duplicates
+
+SELECT
+  DISTINCT *
+
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+
+-- Identify the different attributes under regulatory class and vehicle types
+
+SELECT
+  Regulatory_Class, Vehicle_Type
+
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+
+GROUP BY
+  Regulatory_Class, Vehicle_Type
+
+ORDER BY
+  Vehicle_Type
+
+-- Identify all manufacturers in dataset
+
+SELECT
+  Manufacturer
+
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+
+-- WHERE
+  -- Manufacturer <> 'All' -- Omit All Under Manufacturer
+
+GROUP BY
+  Manufacturer
+
+-- Identify the number of manufacturers per vehicle type in the dataset (Exclude instance of All)
+
+SELECT
+  COUNT(Manufacturer) as Num_of_Vehicles, Vehicle_Type
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+WHERE
+  Vehicle_Type NOT LIKE '%All%'
+GROUP BY
+  Vehicle_Type
+ORDER BY
+  Num_of_Vehicles
+
+---------------------------------------------------------------
+
+-- Create Multiple Tables for analysis
+
+
+
+-- Table 1: Create a table filtering for 'All' occurrences in the vehicle type column
+
+SELECT
+  *
+
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+
+WHERE
+  Vehicle_Type in ('All', 'All Car', 'All Truck')
+  -- OR
+  -- WHERE Vehicle_Type LIKE '%All%'
+
+ORDER BY
+  Manufacturer
+
+-- Table 2: Create a table for Manufacturers that Omits any occurrences of ‘All’ under vehicle type and Regulatory Class
+
+SELECT
+  *
+
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+
+WHERE
+  Vehicle_Type NOT IN ('All', 'All Car', 'All Truck')
+
+ORDER BY
+  Manufacturer
+
+-- Table 3: Create a table where there is a consistent amount of vehiles per vehicle type
+
+-- First we have to see what vehicle type has the lowest count
+
+SELECT
+  COUNT(Vehicle_Type), Vehicle_Type
+FROM
+  data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+WHERE
+  (Vehicle_Type NOT LIKE '%All%')
+  AND (Manufacturer NOT LIKE '%All%')
+GROUP BY
+  Vehicle_Type
+ORDER BY
+  Vehicle_Type
+
+-- Second we need to create a random sample of 305 for all our vehicle types.
+
+WITH Random_Sample AS (
+  SELECT
+    *,
+    ROW_NUMBER() OVER (PARTITION BY Vehicle_Type ORDER BY RAND()) AS row_num
+  FROM
+    data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+  WHERE
+    Manufacturer <> 'Tesla' -- Omit Tesla as it could skew mpg due to its high mpg
+    AND (Manufacturer NOT LIKE '%All%')
+    AND (Vehicle_Type NOT LIKE '%All%')
+)
+
+SELECT
+  *
+FROM
+  Random_Sample
+WHERE
+  row_num <= 305
+ORDER BY
+  Vehicle_Type
+
+-- Table 4: Create a table where there is a consistent amount of vehiles per vehicle type (Tesla Included)
+
+WITH Random_Sample AS (
+  SELECT
+    *,
+    ROW_NUMBER() OVER (PARTITION BY Vehicle_Type ORDER BY RAND()) AS row_num
+  FROM
+    data-analysis-projects-422409.EPA_Data_Analysis.EPA_Dataset
+  WHERE
+    (Manufacturer NOT LIKE '%All%')
+    AND (Vehicle_Type NOT LIKE '%All%')
+)
+
+SELECT
+  *
+FROM
+  Random_Sample
+WHERE
+  row_num <= 305
+ORDER BY
+  Vehicle_Type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
