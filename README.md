@@ -21,6 +21,8 @@
 
 #### 6. Act :clapper:
 
+<a name="top"></a>
+
 ### Scenario
 
 The EPA is interested in the possible benefits or disadvantages in Electric vs. Traditional Combustion Vehicles. They want to know about CO2 emissions and Fuel Efficiency between different manufacturers in order to implement stricter regulations and incentivise the production of environmentally friendly vehicles. Consumers are also interested in which vehicles are in their best interest (fuel efficient) when inquiring about different vehicle types and manufacturers. Your team wants to find insights for your stakeholders in order to aid in the reduction of greenhouse gas emissions and increased fuel efficiency. 
@@ -145,3 +147,6 @@ Future Case Study Recommendations:
 - Obtain more data for an accurate analysis about the other ways EVs produce CO2.
 - Collect information about other types of EVs from different manufacturers as electric adoption grows.
 - Look at the price comparison between Electric Vehicles (EVs) and Traditional Vehicles to influence consumer/public opinion.
+
+
+[Back to top](#top)
