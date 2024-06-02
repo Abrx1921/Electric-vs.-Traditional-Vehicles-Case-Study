@@ -1,6 +1,7 @@
 # Case Study: Electric vs. Traditional Vehicles CO2 Emissions and Fuel Efficiency 
 **Excel + SQL + Tableau Data Analysis Project**
 <a name="top"></a>
+
 **Author: Abraham Saenz Sigala**
 
 **Date: May 4, 2024**
